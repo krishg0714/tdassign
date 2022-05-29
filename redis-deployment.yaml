@@ -20,6 +20,11 @@ spec:
       containers:
       - image: redis
         name: redis
+        livenessProbe:
+          tcpSocket:
+            port: 6439 
+          initialDelaySeconds: 3
+          periodSeconds: 3
         resources: {}
       restartPolicy: Always
 status: {}
