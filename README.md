@@ -18,22 +18,24 @@
 ************************************************************************************************
 
 
-## **Phase 2: Testing the WebServer on local machine**
+## **Phase 2: Convert the docker compose artifact to Kubernetes object**
 
-1. Create httpserver.py 
+1. Installed kompose using https://kompose.io/ 
 
-2. Opened Port 80 on security group to check the webserver directly
-
-3. Checked the url on http://52.14.168.229/ 
-
-4. Verified the logs on Python http server
+2. Executed command kompose convert -f docker-compose.yml 
 
 ```
-python3 httpserver.py
-103.208.71.93 - - [31/Aug/2021 13:51:18] "GET / HTTP/1.1" 200 -
-103.208.71.93 - - [31/Aug/2021 13:51:19] "GET /favicon.ico HTTP/1.1" 200 -
+kompose convert -f docker-compose.yml
+WARN Unsupported depends_on key - ignoring
+WARN Volume mount on the host "." isn't supported - ignoring path on the host
+INFO Kubernetes file "redis-service.yaml" created
+INFO Kubernetes file "web-service.yaml" created
+INFO Kubernetes file "redis-deployment.yaml" created
+INFO Kubernetes file "web-deployment.yaml" created
+INFO Kubernetes file "web-claim0-persistentvolumeclaim.yaml" created
 
-``` 
+```
+
 
 ************************************************************************************************
 
