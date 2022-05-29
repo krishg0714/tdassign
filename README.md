@@ -110,3 +110,8 @@ For Redis added TCP Port probe
 
 ***************************************************************************************************
 
+## **Phase 4: Secret Management**
+
+We can use Kubernetes secret service for confidential information and mount it using config map
+
+Else, we can consider using AWS secrets manager where containers are fetching information at run time using API
